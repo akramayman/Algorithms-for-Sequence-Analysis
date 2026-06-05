@@ -30,7 +30,7 @@ The goal of this repository is to:
 - Understand their computational complexity and applications
 - Apply them to bioinformatics problems
 
-# Assignment 01 – Implementation of Naive Pattern Search
+# Algorithm 01 – Implementation of Naive Pattern Search
 
 ## 📌 Overview
 
@@ -49,7 +49,7 @@ For each shift:
 - Otherwise → shift by one position
 
 ---
-# Assignment 02 – Implementation of Shift-And Algorithm
+# Algorithm 02 – Implementation of Shift-And Algorithm
 
 ## 📌 Overview
 
@@ -66,3 +66,30 @@ The Shift-And algorithm represents the state of pattern matching using **bitmask
 - A match is detected when a specific bit (corresponding to the end of the pattern) becomes set.
 
 The key idea is to simulate a finite automaton using **bit-level parallelism**, allowing multiple comparisons to be performed simultaneously using fast CPU operations.
+
+---
+
+# Algorithm 03 – Suffix Trees from Suffix Arrays (DOT Construction)
+
+## 📌 Overview
+
+This assignment focuses on constructing a **suffix tree from a suffix array** and exporting it in **DOT format** for visualization using Graphviz. The goal is to represent the suffix tree structure explicitly, based on precomputed suffix and LCP arrays.
+
+---
+
+## 🧠 Idea
+
+The suffix tree is built indirectly using the **suffix array (SA)** and **longest common prefix (LCP) array**.
+
+- The suffix array provides the lexicographic order of all suffixes.
+- The LCP array determines shared prefix lengths between consecutive suffixes.
+- Using this information, the tree is reconstructed by tracking string-depth changes.
+
+### Key Concepts:
+- Each **leaf node** represents a suffix starting position in the text.
+- Each **internal node** represents a shared substring among multiple suffixes.
+- Nodes are annotated with:
+  - `iX_Y` → where `X` is a running node ID and `Y` is string depth.
+- Edges are labeled with substrings of the original text.
+
+---
