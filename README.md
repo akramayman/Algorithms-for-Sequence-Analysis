@@ -69,27 +69,44 @@ The key idea is to simulate a finite automaton using **bit-level parallelism**, 
 
 ---
 
-# Algorithm 03 – Suffix Trees from Suffix Arrays (DOT Construction)
+# Algorithm 03 – Suffix Trees from Suffix Arrays & Maximal Unique Matches
+
+This assignment contains two alternative tasks based on suffix arrays and LCP arrays.
+
+---
+
+# 🅰️ (A) Suffix Trees from Suffix Arrays (DOT Format)
 
 ## 📌 Overview
 
-This assignment focuses on constructing a **suffix tree from a suffix array** and exporting it in **DOT format** for visualization using Graphviz. The goal is to represent the suffix tree structure explicitly, based on precomputed suffix and LCP arrays.
+This task focuses on constructing a suffix tree from a suffix array and LCP array and exporting the resulting tree in DOT format for visualization using Graphviz.
 
 ---
 
 ## 🧠 Idea
 
-The suffix tree is built indirectly using the **suffix array (SA)** and **longest common prefix (LCP) array**.
+The suffix tree is reconstructed indirectly using:
+- The **suffix array**, which provides lexicographic ordering of suffixes
+- The **LCP array**, which provides the longest common prefix between consecutive suffixes
 
-- The suffix array provides the lexicographic order of all suffixes.
-- The LCP array determines shared prefix lengths between consecutive suffixes.
-- Using this information, the tree is reconstructed by tracking string-depth changes.
-
-### Key Concepts:
-- Each **leaf node** represents a suffix starting position in the text.
-- Each **internal node** represents a shared substring among multiple suffixes.
-- Nodes are annotated with:
-  - `iX_Y` → where `X` is a running node ID and `Y` is string depth.
-- Edges are labeled with substrings of the original text.
+By tracking changes in LCP values, the structure of the suffix tree can be derived without explicitly building it from scratch.
 
 ---
+
+# 🅱️ (B) Maximal Unique Matches (MUMs)
+
+## 📌 Overview
+
+This task focuses on identifying maximal unique matches (MUMs) between two bacterial genomes using suffix arrays and LCP arrays constructed from a concatenated genome sequence.
+
+---
+
+## 🧠 Idea
+
+The two genomes are concatenated into a single string, and a suffix array and LCP array are built over it.
+
+MUMs are then extracted as substrings that:
+- Appear exactly once in each genome
+- Are maximal, meaning they cannot be extended without losing uniqueness
+
+This allows efficient comparison of genomic similarity based on shared unique substrings.
