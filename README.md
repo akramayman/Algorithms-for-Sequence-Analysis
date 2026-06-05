@@ -103,3 +103,51 @@ MUMs are then extracted as substrings that:
 - Are maximal, meaning they cannot be extended without losing uniqueness
 
 This allows efficient comparison of genomic similarity based on shared unique substrings.
+
+---
+
+# Algorithm 5 – Alignments / Edit Paths as CIGAR Strings
+
+## 📌 Overview
+
+This assignment focuses on enumerating all possible alignments between two strings and representing them as **edit paths**, also known as **CIGAR strings**.
+
+Additionally, it analyzes the number of possible alignments for two strings of length 5.
+
+---
+
+## 🧠 Idea
+
+An alignment between two strings can be represented as a sequence of edit operations:
+
+- **M** → match or mismatch (align one character from each string)
+- **I** → insertion (gap in the second string)
+- **D** → deletion (gap in the first string)
+
+Each alignment corresponds to a path from `(0,0)` to `(m,n)` in a grid:
+- Right move → I
+- Down move → D
+- Diagonal move → M
+
+All valid paths represent all possible alignments between the two strings.
+
+For strings of length `m = n = 5`, the number of possible alignments corresponds to all monotonic paths in a 2D grid using these three move types.
+
+---
+
+## 📌 CIGAR Representation
+
+A **CIGAR string** encodes an alignment as a sequence of operations:
+
+- `M` → match/mismatch (diagonal step)
+- `I` → insertion (horizontal step)
+- `D` → deletion (vertical step)
+
+### Examples (length = 5):
+- `MMMMM`
+- `IIIIIDDDDD`
+
+Each valid combination of these operations corresponds to a unique edit path.
+
+---
+
