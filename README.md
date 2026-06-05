@@ -214,3 +214,29 @@ The differences between the four variants come from:
 - How traceback is performed
 
 ---
+
+# Algorithm 11 – k-mer Index (Suffix Array Based)
+
+## 📌 Overview
+
+This assignment focuses on constructing a **k-mer index** using a suffix array and applying it to a real bacterial genome (E. coli). The index enables efficient retrieval of all occurrences of fixed-length substrings (k-mers) in the genome.
+
+Additionally, the distribution of k-mer bucket sizes is analyzed using a histogram.
+
+---
+
+## 🧠 Idea
+
+The k-mer index is built on top of the **suffix array (pos)** and an auxiliary array (**start**) that maps k-mers to their positions in the suffix array.
+
+### 🔹 Encoding of k-mers
+Each DNA base is encoded using base-4 representation:
+- A → 0  
+- C → 1  
+- G → 2  
+- T → 3  
+
+A k-mer is interpreted as a base-4 number, e.g.:
+- TAC → (301)₄ → 49
+
+---
