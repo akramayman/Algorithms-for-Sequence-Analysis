@@ -49,3 +49,20 @@ For each shift:
 - Otherwise → shift by one position
 
 ---
+# Assignment 02 – Implementation of Shift-And Algorithm
+
+## 📌 Overview
+
+This assignment focuses on implementing the **Shift-And (Bitap) algorithm**, an efficient exact pattern matching technique based on bitwise operations. It is particularly effective for searching patterns in texts over small alphabets and demonstrates how bit-parallelism can significantly speed up string matching.
+
+---
+
+## 🧠 Idea
+
+The Shift-And algorithm represents the state of pattern matching using **bitmasks**, where each bit corresponds to a position in the pattern.
+
+- Each character in the pattern is encoded into a bitmask.
+- As the text is processed character by character, a bit-vector is updated using bitwise shifts and AND operations.
+- A match is detected when a specific bit (corresponding to the end of the pattern) becomes set.
+
+The key idea is to simulate a finite automaton using **bit-level parallelism**, allowing multiple comparisons to be performed simultaneously using fast CPU operations.
