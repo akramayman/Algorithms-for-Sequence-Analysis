@@ -69,13 +69,7 @@ The key idea is to simulate a finite automaton using **bit-level parallelism**, 
 
 ---
 
-# Algorithm 03 – Suffix Trees from Suffix Arrays & Maximal Unique Matches
-
-This assignment contains two alternative tasks based on suffix arrays and LCP arrays.
-
----
-
-# 🅰️ (A) Suffix Trees from Suffix Arrays (DOT Format)
+# Algorithm 03 – Suffix Trees from Suffix Arrays 
 
 ## 📌 Overview
 
@@ -92,8 +86,7 @@ The suffix tree is reconstructed indirectly using:
 By tracking changes in LCP values, the structure of the suffix tree can be derived without explicitly building it from scratch.
 
 ---
-
-# 🅱️ (B) Maximal Unique Matches (MUMs)
+# Algorithm 04 – Maximal Unique Matches
 
 ## 📌 Overview
 
