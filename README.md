@@ -179,3 +179,38 @@ Measures the minimum number of operations (insertions, deletions, substitutions)
 
 ---
 
+# Algorithm 7-10 – Alignment Variants (Needleman-Wunsch, Smith-Waterman, Overlap, Semiglobal)
+
+## 📌 Overview
+
+This assignment extends classical dynamic programming alignment algorithms to support **four different alignment models**:
+
+1. Global alignment (Needleman–Wunsch)
+2. Local alignment (Smith–Waterman)
+3. Overlap alignment (free end gaps)
+4. Semiglobal alignment (optimal pattern matching)
+
+All alignments are computed using the scoring scheme:
+- Match: **+1**
+- Mismatch: **−1**
+- Gap: **−2**
+
+---
+
+## 🧠 Idea
+
+All four alignment methods are based on the same dynamic programming framework:
+
+- Construct a DP matrix where each cell represents the best score up to positions `(i, j)`
+- Use recurrence relations to consider:
+  - Match / mismatch (diagonal move)
+  - Insertion (horizontal move)
+  - Deletion (vertical move)
+
+The differences between the four variants come from:
+- Initialization rules
+- Allowed starting/ending positions
+- Whether negative scores are allowed
+- How traceback is performed
+
+---
