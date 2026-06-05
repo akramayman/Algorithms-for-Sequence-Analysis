@@ -29,3 +29,23 @@ The goal of this repository is to:
 - Implement classical and modern sequence analysis algorithms
 - Understand their computational complexity and applications
 - Apply them to bioinformatics problems
+
+# Assignment 01 – Implementation of Naive Pattern Search
+
+## 📌 Overview
+
+This assignment implements the **Naive Pattern Search algorithm**, which is the simplest method for finding occurrences of a pattern within a text. The algorithm checks every possible alignment of the pattern in the text and compares characters one by one.
+
+---
+
+## 🧠 Algorithm: Naive Pattern Search
+
+### 💡 Idea
+The naive approach slides the pattern over the text one position at a time and checks for a match at each position.
+
+For each shift:
+- Compare the pattern with the current substring of the text
+- If all characters match → report occurrence
+- Otherwise → shift by one position
+
+---
