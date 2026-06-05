@@ -179,7 +179,7 @@ Measures the minimum number of operations (insertions, deletions, substitutions)
 
 ---
 
-# Algorithm 7-10 – Alignment Variants (Needleman-Wunsch, Smith-Waterman, Overlap, Semiglobal)
+# Algorithms 7-10 – Alignment Variants (Needleman-Wunsch, Smith-Waterman, Overlap, Semiglobal)
 
 ## 📌 Overview
 
