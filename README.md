@@ -151,3 +151,31 @@ Each valid combination of these operations corresponds to a unique edit path.
 
 ---
 
+# Algorithm 6 – Distances of Random Strings
+
+## 📌 Overview
+
+This assignment investigates the relationship between **Hamming distance** and **edit distance** by experimentally analyzing random DNA sequences.
+
+The goal is to generate random string pairs, compute both distance measures, and visualize their distributions.
+
+---
+
+## 🧠 Idea
+
+The experiment is based on statistical comparison of two string distance metrics:
+
+### 🔹 Hamming Distance
+Measures the number of positions where two strings of equal length differ.
+
+- Only defined for strings of the same length
+- Captures simple positional mismatches
+
+### 🔹 Edit Distance (Levenshtein Distance)
+Measures the minimum number of operations (insertions, deletions, substitutions) required to transform one string into another.
+
+- More general than Hamming distance
+- Accounts for shifts and gaps in alignment
+
+---
+
